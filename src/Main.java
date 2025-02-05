@@ -6,6 +6,8 @@ public class Main {
         String username = "root";
         String psw = "12345#Lmg";
         String query = "SELECT e.employee_id, e.first_name, e.last_name, e.position, e.salary, d.department_name FROM employees e JOIN departments d ON e.department_id = d.department_id";
+        String query1 = "INSERT INTO employees (employee_id, first_name, last_name, position, salary, department_id) VALUES (?, ?, ?, ?, ?, ?)";
+
 
         // Load the MySQL JDBC driver {old version on thelusko this is the new version}
         Class.forName("com.mysql.cj.jdbc.Driver");
@@ -18,6 +20,8 @@ public class Main {
 
         // Execute the query
         ResultSet rs = st.executeQuery(query);
+       
+
 
         // Process the result
         int i = 1;
